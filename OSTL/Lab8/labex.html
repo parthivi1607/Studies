@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<!--
+	<style>
+		body {background-color:rgba(255, 99, 71, 0.2);}
+	</style>
+	-->
+	<link rel="stylesheet" href="style.css">
+	<title>Lab 8</title>
+	<meta charset="UTF-8">
+</head>
+
+<style>
+	.ss{
+		width: 100;
+		border: 1px solid black;
+		height: 100;
+	}
+
+	table{
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		border: 1px solid black;
+		width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  border: 1px solid black;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+	}
+</style>
+<nav>
+	<a href="https://www.google.com/">Google</a>|
+	<a href="https://www.youtube.com/">Youtube</a>|
+	<a href="https://www.gmail.com/">Gmail</a>|
+	<a href="#A1">Navigate To Pic Link on the same page</a>
+</nav>
+
+<body>
+
+	<!--Title section-->
+	<section style="background-color:rgb(216, 191, 216);">
+		<h1 style="text-align:center;">OSTL</h1>
+		<h2 style="text-align:center;">Web Development</h2>
+		<h3 style="text-align:center;">Lab 8</h3>
+		<h4 style="text-align:center;">HTML5</h4>
+		<h5 style="text-align:center;">Hyper Text Markup Language</h5>
+		<hr>
+	</section>
+
+	<marquee behavior="scroll">HTML CSS JS</marquee>
+
+	<div style="background-color:lightblue">
+		<p style="direction: rtl">This is a <span style="color:red">division</span></p>
+	</div>
+	<div style="background-color:lightblue">
+		<p style="direction: ltr">This is a <span style="color:red">division</span></p>
+	</div>
+
+	<!--Image which acts like a link with a cite and modified width and height-->
+	<hr>
+	<a href="https://en.wikipedia.org/wiki/HTML5"><img src="html.png" alt="HTML5" width="300" height="300"></a>
+	<p><cite>HTML5</cite> image</p>
+	<hr>
+
+	<!--Links-->
+	<p><a href="https://www.w3schools.com/html/html_formatting.asp" target="_blank"> Click Here</a></p>
+	<section>
+		<p style="font-family:courier;"><a href="https://www.w3schools.com/">w3schools.com</a> makes it easy to learn web development online.</p>
+	</section>
+	<button>Go to <a href="https://www.w3schools.com/">w3schools.com</a></button>
+	<hr>
+
+	<p><a id="A1" href="https://www.w3schools.com/html/html_formatting.asp" target="_blank"><img src="index.jpg" alt="Link"  style="width: 20vw"></a>
+
+	<section style="background-color:powderblue;">
+		<h4 title="Lists">Types of lists:-</h4>
+		<h5 style="color:red">Unordered list:</h5>
+		<ul>
+			<li>HTML5</li>
+			<li>CSS</li>
+			<li>JavaScript</li>
+		</ul>
+		<h5 style="color:green">Ordered list:</h5>
+		<ol>
+			<li>HTML5</li>
+			<li>CSS</li>
+			<li>JavaScript</li>
+		</ol>
+	</section>
+	<hr>
+	<dl>  
+      <dt>HTML</dt>  
+      <dd>is a markup language</dd>  
+      <dt>Java</dt>  
+      <dd>is a programming language</dd>  
+      <dt>JavaScript</dt>  
+      <dd>is a scripting language</dd>  
+      <dt>C and C++</dt>  
+      <dd>are coding languages</dd>   
+    </dl>  
+	<hr>
+
+	<!--from the w3schools website-->
+	<p style="border:2px solid tomato; padding: 30px; margin: 50px;" >The pre tag preserves both spaces and line breaks:</p>
+	<pre style="background-color:hsl(0, 100%, 75%);">
+Greetings
+	Hey
+		Hello
+	Hi
+How     are          you?
+	</pre>
+
+	<section style="background-color:hsla(9, 100%, 64%, 0.5); padding: 30px;">
+		<b>Bold text</b><br>
+		<strong>Important text</strong><br>
+		<i>Itallics text</i><br>
+		<em>Emphasized text</em><br>
+		<mark>Marked text</mark><br>
+		<small>Small text</small><br>
+		<del>Deleted text</del><br>
+		<ins>Inserted text</ins><br>
+		Text<sub>subscript</sub><br>
+		Text<sup>superscript</sup><br>
+	</section>
+
+	<p>WWF's goal is to: <q>Build a future where people live in harmony with nature.</q></p>
+	<p>Here is a quote from WWF's website:</p>
+	<blockquote cite="http://www.worldwildlife.org/who/index.html">
+		For 50 years, WWF has been protecting the future of nature.
+		The world's leading conservation organization,
+		WWF works in 100 countries and is supported by
+		1.2 million members in the United States and
+		close to 5 million globally.
+	</blockquote> 
+
+	<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+
+	 <bdo dir="rtl">This text will be written from right to left.</bdo> 
+	 <!---->
+
+	 <table>
+		<caption>Registerations</caption>
+		<tr>
+		<th>College</th>
+		<th>Name</th>
+		<th>Reg No.</th>
+		</tr>
+
+		<tr>
+		<th>MIT</th>
+		<th>ABC</th>
+		<th>180905000</th>
+		</tr>
+
+		<tr>
+		<th>MIT</th>
+		<th>Parthivi Choubey</th>
+		<th>180905456</th>
+		</tr>
+	</table>
+	<br>
+	<hr>
+	<br>
+	<form action="/submit_page.php" method="get" target="_blank">
+		<fieldset>
+		<fieldset>
+		<br>
+		Name:<br>
+		<input type="text" name="name"><br>
+		Last Name:<br>
+		<input type="text" name="lastname"><br>
+		Registeration Number:<br>
+		<input type="text" name="reg"><br>
+		Password:<br>
+		<input type="password" name="password"><br>
+		
+		</fieldset>
+		<input type="radio" name="gender" value="male" checked> Male<br>
+  		<input type="radio" name="gender" value="female"> Female<br>
+ 		<input type="radio" name="gender" value="other"> Other<br>
+ 		<button type="submit" value="Submit">Submit</button>
+ 		<button type="reset" value="reset">Reset</button> 
+
+ 		<select name="Select" autofocus>
+ 			<option value="subjects">Subjects</option>
+ 			<option value="physics">Physics</option>
+ 			<option value="biology">Biology</option>
+ 			<option value="chemistry">Chemistry</option>
+ 			<option value="math">Math</option>
+ 		</select>
+ 		</fieldset>
+	</form>
+	<br>
+
+	<canvas id="canvas" width="200" height="100"  style="border:1px solid #000000;">
+	</canvas>
+	<script>
+		var a=document.getElementById("canvas");
+		var ctx=a.getContext("2d");
+		ctx.beginPath();
+		ctx.arc(95,50,40,0,2*Math.PI);
+		ctx.stroke();
+	</script>
+
+	 <!--conclusion-->
+	 <address style="background-color:#b4b4b4;">
+	 	<hr>
+	 	Parthivi Choubey<br>
+	 	Hiranandani Estate,<br>
+	 	Thane - 400607,<br>
+	 	Maharashtra.
+	</address> 
+
+</body>
+
+</html>
