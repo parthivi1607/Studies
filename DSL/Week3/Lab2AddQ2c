@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct
+{
+	int x,y;
+}COMPLEX;
+
+void read(COMPLEX *num)
+{
+	printf("Enter real part : ");
+	scanf("%d",&num->x);
+	printf("Enter imaginary part : ");
+	scanf("%d",&num->y);
+}
+
+void add()
+{
+
+}
+
+void main()
+{
+	/*
+	if(!(ptr = calloc(num,sizeof(int))))
+	{
+		exit(0);
+	}
+	*/
+	COMPLEX *no1;
+	printf("Enter no. 1 :\n");
+	read(no1);
+	COMPLEX *no2;
+	printf("Enter no. 2 :\n");
+	read(no2);
+	printf("Complex no. 1 : %d + i%d",no1->x,no1->y);
+	printf("Complex no. 2 : %d + i%d",no2->x,no2->y);
+}
