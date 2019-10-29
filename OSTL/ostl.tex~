@@ -1,0 +1,502 @@
+\documentclass[]{article}
+\usepackage{amssymb, amsmath}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+%\usepackage{tgheros}
+\begin{document}\large
+{\fontfamily{lmss}\selectfont
+\title{\textbf{Open Source Technologies Lab}\\ \vspace{0.5cm}\LARGE \textbf{Lab Observation}}
+\author{Parthivi Choubey}
+\publisher{CSE B 60}
+\maketitle
+\titlepage
+\tableofcontents
+\newpage
+\section{\textbf{Lab 06 : Introduction to Latex}}
+
+\subsection{\textbf{Important LaTeX Commands}}
+\begin{enumerate}
+\item \verb|\documentclass[]{type_of_document}| - to specify the \textit{type of document} being created.
+\item \verb|\usepackage{package_name}| - to import necessary packages or classes.
+\item \verb|\begin{document} & \end{document}| - to start and end the document.
+\item \verb|\tableofcontents| - to create a table of contents.
+\item \verb|\listoftables & \listoffigures| - to create list of tables and figures respectively.
+\item \verb|\makepage & \titlepage| - to create a title and a titlepage.
+\item \verb|\newpage| - to create a new page.
+\item \verb|\chapter{chapter_name}| - to create a new chapter.
+\item \verb|\section{section_name} & \subsection{subsection_name}| - to create a new section and subsection respectively.
+\item \verb|\begin{figure} & \end{figure}| - to begin and end a figure environment.
+\item \verb|\includegraphics[scale]{file_name}| - to insert an image.
+\item \verb|\caption| - to caption the inserted image.
+\item \verb|\label{label_name}| - to label the image for further reference.
+\item \verb|\begin{itemize} & \end{itemize}| - to create a bulleted list.
+\item \verb|\begin{enumerate} & \end{enumerate}| - to create a  numbered list.
+\item \verb|\item | - to enter every element in the list environment.
+\item \verb|\begin{frame} & \end{frame}| - to create a slide in a presentation while using beamer class.
+\item \verb|\frametitle{title_name}| - to give a title to a slide.
+\item \verb|\begin{block}{remark} & \end{block}| - to create a new block.
+\item \verb|\begin{alertblock}{remark} & \end{alertblock}| - to create a new alert block.
+\item \verb|\begin{column}[]{} & \end{column}| - to divide a page into columns.
+\end{enumerate} 
+
+\vspace{1cm}
+\subsection{\textbf{Lab Exercises}}
+\begin{enumerate}
+\item
+	Create a document in LaTeX using \textit{article} 	class and perform the following.
+	\begin{itemize}
+	\item Create sections and subsections in the document.
+	\item Generate table of contents for the document.
+	\item Create ordered and unordered lists in the document.
+	\end{itemize}
+	 Solution :
+		\begin{verbatim}
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\begin{document}
+  \title{LaTeX_1}
+  \author{Nishal}
+  \maketitle
+  \tableofcontents
+  \section{Introduction}
+    This is the introduction.
+  \section{Functions}
+    \subsection{Stage 1}
+     This is the first function.
+    \subsection{Stage 2}  
+     This is the second function.
+  \section{Constructors}
+  There are two types :
+  \begin{itemize}
+	\item Parameterized
+	\item Non-Parameterized
+  \end{itemize}
+  \begin{enumerate}
+	\item Parameterized
+	\item Non-Parameterized
+  \end{enumerate}	
+\end{document}
+
+		\end{verbatim}
+		
+\item
+	Create a document in LaTeX using \textit{report} class and perform the following.
+	\begin{itemize}
+	\item Repeat the exercises specified in Q1.
+	\item Include figures and refer them in the text.
+	\item Include a title page for the document.
+	\end{itemize} 
+	 Solution :
+		\begin{verbatim}
+\documentclass[a4paper,11pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\begin{document}
+\titleLaTeX_2}
+\author{Nishal}
+\maketitle
+\tableofcontents
+\chapter{Learn C}
+   \section{Introduction}
+       This is the introduction.
+   \section{Functions}
+	   \subsection{Stage 1}
+	      This is the first function.
+	   \subsection{Stage 2}
+	       This is the second function.
+   \section{Constructors}
+    There are two types :
+    \begin{itemize}
+        \item Parameterized
+        \item Non-Parameterized
+    \end{itemize}
+    \begin{enumerate}
+        \item Parameterized
+        \item Non-Parameterized
+    \end{enumerate}	
+\begin{figure}[t]
+\centering 
+\includegraphics[width=350pt,height=250pt]{image1.jpeg}
+\caption{A Computer}
+\end{figure}
+\end{document}
+
+		\end{verbatim}
+		
+\item
+	Create a presentation in LaTeX and perform the following.
+	\begin{itemize}
+	\item Create the first example as shown in the presentation.
+	\item Create a simple presentation with 3 slides with 2 different sections each.
+	\item Create a title page with title, subtitle, date, location and 3 different authors with two different affiliations.
+	\item Create a table of contents and let it reappear before every section.
+	\item Use different themes in the presentation.
+	\end{itemize} 
+	 Solution : 
+		\begin{verbatim}
+\documentclass{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usetheme{CambridgeUS}
+\usecolortheme{crane}
+\begin{document}
+\title{Presentation with Beamer 1}
+\subtitle{Using LaTeXila}
+\author{Nishal}
+\institute{MIT}
+\location{Manipal, Udupi}
+\date{\today}
+\maketitle
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+\begin{frame}
+    \frametitle{Introduction and Functions}
+    \section{Introduction}
+	    This is the introduction.
+    \section{Functions}
+	    \subsection{Stage 1}
+	        This is the first function.
+	    \subsection{Stage 2}
+	        This is the second function.
+\end{frame}
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+\begin{frame}
+\frametitle{Constructor and Images}
+   \section{Constructors}
+	    There are two types of Constructors : 
+        \begin{itemize}
+           \item Parameterized
+           \item Non-Parameterized
+        \end{itemize}
+        \begin{enumerate}
+           \item Parameterized
+           \item Non-Parameterized
+        \end{enumerate}
+   \section{Images}	
+        \begin{figure}[t]
+        \centering
+        \includegraphics[width=100pt,height=75pt]{i1.jpeg}
+        \caption{A Computer}
+        \end{figure}
+\end{frame}
+\end{document}
+
+		\end{verbatim}
+\item
+	Extend the above exercise by performing the following.
+	\begin{itemize}
+	\item Add a frame containing a simple block without a title and an alert block with a title.
+	\item Generate overlays using itemize environment with the pause command and overlay specifications.
+	\item Use various commands like only, onslide, uncover, visible to generate overlays.
+	\end{itemize} 
+	 Solution : 
+		\begin{verbatim}
+\documentclass{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usetheme{Antibes}
+\usecolortheme{seagull}
+\usefonttheme{serif}
+\begin{document}
+\title{Presentation with Beamer 2}
+\subtitle{Using Tex Studio}
+\author{Nishal}
+\institute{MIT}
+\location{Manipal, Udupi}
+\date{\today}
+\maketitle
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+\begin{frame}
+\frametitle{Introduction and Functions}
+\section{Introduction}
+    This is the introduction.
+\section{Functions}
+    \subsection{Stage 1}
+        This is the first function.
+    \subsection{Stage 2}
+        This is the second function.
+\end{frame}
+\begin{frame}
+\frametitle{Constructor and Images}
+\section{Constructors}
+    There are two types of Constructors :
+    \begin{itemize}
+        \item Parameterized
+        \item Non-Parameterized
+    \end{itemize}
+    \begin{enumerate}
+        \item Parameterized
+        \item Non-Parameterized
+    \end{enumerate}
+\section{Images}	
+    \begin{figure}[t]
+    \centering
+    \includegraphics[width=100pt,height=75pt]{i1.jpeg}
+    \caption{A Computer}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \begin{block}{}
+        This is a block.
+    \end{block}
+    \begin{alertblock}{ALERT!!}
+        This is an alert block
+    \end{alertblock}
+\end{frame}
+\begin{frame}
+    This \pause will be visible \pause  in this frame.
+\end{frame}
+\begin{frame}
+    \begin{itemize}
+    \item<1-> This is the first sentence in this frame. \invisible 
+    {This is invisible}
+    \item<2-3> This is the second sentence in this frame. \visible 
+    {This is visible}
+    \item<2-5> This is the third sentence. \only {Using only}
+    \item<5> End of overlays.
+    \end{itemize} 
+\end{frame}
+\end{document}
+
+		\end{verbatim}
+\end{enumerate}
+%\newpage
+\vspace{1.5cm}
+\section{\textbf{Lab 07 : Latex Tables, Equations and Bibliography}}
+
+\subsection{\textbf{Important LaTeX Commands}}
+\begin{enumerate}
+\item \verb|\begin{table}[] & \end{table}| - to begin and end a table environment.
+\item \verb|\begin{tablular}{lcr} & \end{tabular}| - to create a table, where l inserts a vertical line.Here l aligns the contents of the column to the left, r to the right and c to the center.
+\item \verb|\centering| - to align an object to the centre of the document.
+\item \verb|\caption| - to caption the inserted table.
+\item \verb|\label{label_name}| - to label the table for further reference.
+\item \verb|\hline| -to insert a horizontal line.
+\item \verb|\cline{}| -to insert a partial horizontal line specified by the no of columns.
+\item \verb|\multicolumn{n}{c}{text}| - to combine \textit{n} columns and insert \textit{text} in that column.
+\item \verb|\multirow{n}*{text}| - to combine \textit{n} rows and insert \textit{text} in that row.
+\item \verb|$F = ma$| - everything between two \verb|$| signs is considered as math expression.
+\item \verb|\begin{equation} & \end{equation}| - to create an equation environment. Here math expressions can be inserted without using \verb|$| symbol.
+\item All the references that need to cited in the document must be saved in a BibTex file of extension \textit{.bib}. Each unique reference must have a citation key.
+\item \verb|\bibliographystyle{style} & \bibliography{file_name}| - to insert bibliography of type \textit{style} in the document where \textit{file name} is the name of the BibTex file.
+\item \verb|\cite{citation_key}| - to cite a reference associated with \textit{citation key} in the document.
+\end{enumerate}
+%\newpage
+\vspace{1cm}
+\subsection{\textbf{Lab Exercises}}
+\begin{enumerate}
+\item Create a class timetable using tabular environment.\newline
+Solution :
+          \begin{verbatim} 
+		\documentclass{report}
+		\usepackage{rotating}
+		\usepackage{multirow}
+		
+		
+		\usepackage{geometry}
+		\geometry{legalpaper, landscape, margin=2in}
+		
+		
+		
+			\begin{tabular}{|l|l|l|c|l|c|l|l|c|l|}
+				\hline
+				\textbf{DAY}&9-9.50&9.55-10.50&10.50-11.05&11.05-12.00&12.00-1.00&1.00-1.50&1.55-2.45&2.45-3.00&3.00-4.00\\
+				\hline
+				\textbf{MON}& & &\multirow{6}*{\rotatebox{90}{Break}} & &\multirow{6}*{\rotatebox{90}{Lunch}} & & &\multirow{6}*{\rotatebox{90}{Break}} &\\
+				\cline{1-3}
+				\cline{7-8}
+				\cline{5-5}
+				\textbf{TUE}& & & & & & & & &\\
+				\cline{1-3}
+				\cline{7-8}
+				\cline{5-5}
+				\textbf{WED}& & & & & & & & &\\
+				\cline{1-3}
+				\cline{7-8}
+				\cline{5-5}
+				\textbf{THU}& & & & & & & & &\\
+				\cline{1-3}
+				\cline{7-8}
+				\cline{5-5}
+				\textbf{FRI}& & & & & & & & &\\
+				\hline
+			\end{tabular}
+		\end{verbatim}
+		
+\vspace{2cm}
+\item Create a document using \textit{article} class, and then insert equations into the created document.\newline
+Solution : 		
+		\begin{verbatim}
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\title{LaTeX 2}
+\author{Rakshith C}
+\begin{document}
+\maketitle
+\tableofcontents
+\section{Mathematical Equations}
+\begin{enumerate}
+  \item $$(a+b)^2 = a^2+b^2+2ab$$
+  \item $$(a-b)^2 = a^2+b^2-2ab$$
+  \item $$(a+b)^3 = a^3+b^3+3ab(a+b)$$
+  \item $$(a-b)^3 = a^3+b^3+3ab(a-b)$$
+  \item $$(a^2-b^2) = (a+b)(a-b)$$
+  \item $$(a^3+b^3) = (a+b)^3-3ab(a+b)$$
+\end{enumerate}
+\end{document}
+		\end{verbatim}\vspace{1}
+\item Generate bibliography for the document and refer to them in the text in author-year format, and then using numbering format.\newline
+Solution:
+		\begin{verbatim}
+			
+.bib file : 
+@article{
+  Birdetal2001,
+  Author={Bird, R.B. and Smith, E.A. and Bird, D.w},
+  Title ={Hunting 101},
+  Journal = {Behavioural Ecology and Sociobiology},
+  Volume = {50},
+  Pages = {20-30},
+  Year = {2001}
+}
+
+@article{
+  1,
+  Author={Rafiquzamman and Carl Hamachur},
+  Title={Computer Architecture},
+  Journal = {Computers are taking over the World},
+  Volume = {8},
+  Pages = {12-28},
+  Year = {2008}
+}
+
+
+.tex file : 
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\title{Program 3}
+\author{Rakshith C}
+\begin{document}
+\maketitle
+\tableofcontents
+\section{Bibliography}
+Referring through author-year format,
+\cite{Birdetal2001}
+Referring through numbering format,
+\cite{1}
+\bibliographystyle{plain}
+\bibliography{bib1}
+\end{document}
+
+		\end{verbatim}
+\item Create your own CV.\newline
+Solution : 
+		\begin{verbatim}
+\documentclass[10pt]{article}
+\usepackage[margin=3cm]{geometry}
+\usepackage{array, xcolor}
+\usepackage{lipsum}
+\usepackage{bibentry}
+\definecolor{lightgray}{gray}{0.8}
+\newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
+\newcolumntype{R}{p{0.8\textwidth}}
+\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+\title{\bfseries\Huge Rakshith C}
+\author{rcb@gmail.com}
+\date{}
+\begin{document}
+\maketitle
+\begin{minipage}[ht]{0.48\textwidth}
+Main Road 25\\
+City 12345\\
+Doddanagudde
+\end{minipage}\hspace{4cm}
+\begin{minipage}[ht]{0.48\textwidth}
+Udupi\\
+January 3rd, 2020\\
++91 876205618
+\end{minipage}
+\vspace{2cm}
+\section*{Education}
+\begin{tabular}{L!{\VRule}R}
+2015--2017&{\bf Pre-University College in Computer Science,
+ M.G.M College, Kunjibettu.}\\[5pt]
+2018--2022& \bf B.Tech in Computer Science and Engineering,
+ M.I.T, Manipal.\\
+\end{tabular}
+\section*{Languages}
+\begin{tabular}{L!{\VRule}R}
+Tulu & \bf Mother tongue\\
+{English}&{\bf Fluent}\\
+\end{tabular}
+\section*{Projects}
+\begin{tabular}{L!{\VRule}R}
+2018--2019&{\bf Trainee at company ZY.}\\
+2019--today&{\bf Intern at company XY.}\\
+\end{tabular}
+\bibliographystyle{plain}
+\nobibliography{publication.bib}
+\section*{Publications}
+\begin{tabular}{L!{\VRule}R}
+2018&\bf Published Z in Y journal.\\[5pt]
+2019&\bf Published Q in R journal\\
+\end{tabular}
+\end{document}
+
+		\end{verbatim}
+\item Create a document in LaTeX using IEEE template.\newline
+Solution : 
+		\begin{verbatim}
+\documentclass[journal]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\title{Program 5}
+\author{Rakshith C}
+\begin{document}
+\maketitle
+\tableofcontents
+\section{Introduction}
+    This is the introduction.
+\section{Functions}
+    \subsection{Stage 1}
+        This is the first function.
+    \subsection{Stage 2}
+        This is the second function.
+\section{Constructors}
+    There are two types :
+    \begin{itemize}
+        \item Parameterized
+        \item Non-Parameterized
+    \end{itemize}
+    \begin{enumerate}
+        \item Parameterized
+        \item Non-Parameterized
+    \end{enumerate}	
+\end{document}
+		\end{verbatim}
+\end{enumerate}
+\vspace{1cm}
+\hspace{3.5cm}-------------XXXXXX-------------
+}
+\end{verbatim}
