@@ -1,0 +1,15 @@
+Lab 3
+
+(select course_id from section where semester='Fall' and year=2009) union (select course_id from section where semester='Spring' and year=2010);
+
+(select course_id from section where semester='Fall' and year=2009) intersect (select course_id from section where semester='Spring' and year=2010);
+
+(select course_id from section where semester='Fall' and year=2009) minus (select course_id from section where semester='Spring' and year=2010);
+
+select course_id from course where course_id not in (select distinct course_id from takes);
+
+select distinct course_id from section where semester='Fall' and year=2009 and course_id in (select course_id from section where semester='Spring' and year=2010);
+
+
+
+select distinct course_id from section where semester='Fall' and year=2009 and course_id not in (select course_id from section where semester='Spring' and year=2010);
