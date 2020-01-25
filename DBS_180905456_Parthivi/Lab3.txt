@@ -10,6 +10,16 @@ select course_id from course where course_id not in (select distinct course_id f
 
 select distinct course_id from section where semester='Fall' and year=2009 and course_id in (select course_id from section where semester='Spring' and year=2010);
 
-
+select count(distinct id) from takes where (course_id,sec_id,semester,year) in (select course_id,sec_id,semester,year from teaches where teaches.id=10101);
 
 select distinct course_id from section where semester='Fall' and year=2009 and course_id not in (select course_id from section where semester='Spring' and year=2010);
+
+select name from student where name in (select name from instructor);
+
+select name from instructor where salary>some(select salary from instructor where dept_name='Biology');
+
+select name from instructor where salary>all (select salary from instructor where dept_name='Biology');
+
+select dept_name, avg(salary) from instructor group by dept_name having avg(salary)>=all (select avg(salary) as avg_sal from instructor group by dept_name);
+
+select dept_name from department where 
