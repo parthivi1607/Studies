@@ -5,13 +5,6 @@ struct Graph
 {
 	int V;
 	int **arr;
-	int *visited;
-};
-
-struct Stack
-{
-	int* arr;
-	int top;
 };
 
 struct Graph* createGraph(int v)
@@ -19,13 +12,11 @@ struct Graph* createGraph(int v)
 	struct Graph* g = (struct Graph*)malloc(sizeof(struct Graph));
 	g->V = v;
 	g->arr = (int**)calloc(v,sizeof(int*));
-	g->visited = (int*)calloc(v,sizeof(int));
 	for(int i=0; i<v; i++)
 	{
 		*(g->arr+i) = (int *)calloc(v,sizeof(int));
 		for(int j=0; j<v; j++)
 			*(*(g->arr+i)+j) = 0;
-		g->visited[i]=0;
 	}
 	return g;
 }
@@ -54,54 +45,6 @@ void display(struct Graph* g)
 	}
 }
 
-int isEmpty(struct Stack* s)
-{
-	if(s->top == -1) return 1;
-	return 0;
-}
-
-void push(struct Graph* g, struct Stack* s, int ele)
-{
-	if(s->top < g->V)
-	{
-		(s->top)++;
-		s->arr[s->top]=ele;
-	}
-}
-
-int pop(struct Stack* s)
-{
-	return s->arr[s->top--];
-}
-
-void toposort(struct Graph* g, struct Stack* s, int x)
-{
-	g->visited[x]=1;
-	for(int i=0;i<g->V;i++)
-	{
-		if(g->arr[x][i]==1)
-		{
-			if(!g->visited[i])
-				toposort(g,s,i);
-		}
-	}
-	push(g,s,x);
-}
-
-void topological(struct Graph* g, struct Stack* s)
-{
-	for(int i=0;i<g->V;i++)
-	{
-		if(g->visited[i]==0)
-			toposort(g,s,i);
-	}
-
-	while(!isEmpty(s))
-	{
-		printf("%d ",pop(s));
-	}
-}
-
 int main()
 {
 	printf("Enter no. of vertices : ");
@@ -109,13 +52,16 @@ int main()
 	scanf("%d",&v);
 	struct Graph* g = createGraph(v);
 
-	struct Stack * s = (struct Stack*)malloc(sizeof(struct Stack));
-	s->top = -1;
-	s->arr = (int*)calloc(v, sizeof(int));
+	int indeg[v],flag[v];
+	for(int i=0;i<v;i++)
+	{
+        indeg[i]=0;
+        flag[i]=0;
+    }
 
 	printf("Enter no. of edges : ");
 	scanf("%d",&v);
-	int i=0;
+	int i=0, count=0;
 	int x,y;
 	while(i<v)
 	{
@@ -125,8 +71,29 @@ int main()
 		i++;
 	}
 	//display(g);
+	for(i=0;i<g->V;i++)
+        for(int j=0;j<g->V;j++)
+            indeg[i]=indeg[i]+g->arr[j][i];
+
 	printf("Topologically  sorted array : ");
-	topological(g,s);
+	//topological(g);
+	while(count<g->V){
+        for(int k=0;k<g->V;k++)
+        {
+            if((indeg[k]==0) && (flag[k]==0))
+            {
+                printf("%d ",k);
+                flag [k]=1;
+            }
+ 
+            for(i=0;i<g->V;i++)
+            {
+                if(g->arr[i][k]==1)
+                    indeg[k]--;
+            }
+        }
+        count++;
+    }
 	return 0;
 }
 
@@ -140,5 +107,5 @@ Enter 2 vertices : 4 0
 Enter 2 vertices : 4 1
 Enter 2 vertices : 2 3
 Enter 2 vertices : 3 1
-Topologically  sorted array : 5 4 2 3 1 0
+Topologically  sorted array : 4 5 0 1 2 3
 */
