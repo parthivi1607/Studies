@@ -1,2 +1,2 @@
 # Studies
-CSE codes
+CSE lab codes
