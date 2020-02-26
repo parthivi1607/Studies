@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="293.0" prefWidth="430.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.SampleController">
+   <children>
+      <Button fx:id="instbtn" layoutX="76.0" layoutY="90.0" mnemonicParsing="false" onAction="#showins" text="Instructor" />
+      <Button fx:id="deptbtn" layoutX="282.0" layoutY="90.0" mnemonicParsing="false" onAction="#showdept" text="Department" />
+      <Button fx:id="exitbtn" layoutX="198.0" layoutY="172.0" mnemonicParsing="false" onAction="#exitfn" text="Exit" />
+   </children>
+</AnchorPane>

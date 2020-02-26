@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="376.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Sample1Controller">
+   <children>
+      <Label layoutX="39.0" layoutY="36.0" text="Dept name" />
+      <Label layoutX="39.0" layoutY="73.0" text="Building" />
+      <Label layoutX="39.0" layoutY="113.0" text="Budget" />
+      <TextField fx:id="deptname" layoutX="105.0" layoutY="32.0" />
+      <TextField fx:id="bldng" layoutX="105.0" layoutY="69.0" />
+      <TextField fx:id="budget" layoutX="105.0" layoutY="109.0" />
+      <Button fx:id="add" layoutX="43.0" layoutY="188.0" mnemonicParsing="false" onAction="#insertrec" text="Add" />
+      <Button fx:id="modify" layoutX="135.0" layoutY="188.0" mnemonicParsing="false" onAction="#updaterec" text="Modify" />
+      <Button fx:id="del" layoutX="228.0" layoutY="188.0" mnemonicParsing="false" onAction="#deleterec" text="Delete" />
+      <Button fx:id="clr" layoutX="331.0" layoutY="188.0" mnemonicParsing="false" onAction="#clrtxt" text="Clear" />
+      <Button fx:id="prev" layoutX="43.0" layoutY="259.0" mnemonicParsing="false" text="Prev" />
+      <Button fx:id="main" layoutX="135.0" layoutY="259.0" mnemonicParsing="false" text="Main" />
+      <Button fx:id="exit" layoutX="228.0" layoutY="259.0" mnemonicParsing="false" text="Exit" />
+      <Button fx:id="nxt" layoutX="327.0" layoutY="259.0" mnemonicParsing="false" text="Next" />
+   </children>
+</AnchorPane>
