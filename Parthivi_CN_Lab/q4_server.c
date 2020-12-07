@@ -7,7 +7,7 @@
 #include <sys/types.h>
 #include <time.h>
 #define MAX 80
-#define PORT 8080
+#define PORT 9000
 #define SA struct sockaddr
 
 int main()
@@ -22,7 +22,7 @@ int main()
 		exit(0);
 	}
 	else
-		printf("Socket successfully created..\n");
+		printf("Socket successfully created...\n");
 	bzero(&servaddr, sizeof(servaddr));
 
 	// assign IP, PORT
@@ -36,7 +36,7 @@ int main()
 		exit(0);
 	}
 	else
-		printf("Socket successfully binded..\n");
+		printf("Socket successfully binded...\n");
 
 	// Now server is ready to listen and verification
 	if ((listen(sockfd, 5)) != 0) {
@@ -44,7 +44,7 @@ int main()
 		exit(0);
 	}
 	else
-		printf("Server listening..\n");
+		printf("Server listening...\n");
 	len = sizeof(cli);
 
 	// Accept the data packet from client and verification
@@ -63,9 +63,11 @@ int main()
 	time_t current_time = time(NULL);
     struct tm *local_time = localtime(&current_time);
     printf("The time is: %s", asctime(local_time));
-    char *timenow = malloc((strlen(asctime(local_time))+1)*sizeof(char));
-    strcpy(timenow, asctime(local_time));
-    write(connfd, timenow, sizeof(timenow));
+    strcpy(buf, asctime(local_time));
+    write(connfd, buf, sizeof(buf));
+    int pid = getpid();
+    write(connfd, &pid, sizeof(int));
+    printf("PID = %d\n", pid);
     
 	// After sending exit message close the socket
 	close(sockfd);

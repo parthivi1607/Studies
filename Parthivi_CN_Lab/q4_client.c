@@ -4,7 +4,7 @@
 #include <string.h>
 #include <sys/socket.h>
 #define MAX 80
-#define PORT 8080
+#define PORT 9000
 #define SA struct sockaddr
 
 int main()
@@ -19,7 +19,7 @@ int main()
 		exit(0);
 	}
 	else
-		printf("Socket successfully created..\n");
+		printf("Socket successfully created...\n");
 	bzero(&servaddr, sizeof(servaddr));
 
 	// assign IP, PORT
@@ -33,14 +33,17 @@ int main()
 		exit(0);
 	}
 	else
-		printf("connected to the server..\n");
+		printf("connected to the server...\n");
 
 	// function for client
 	char *buf = "Time?";
 	write(sockfd, buf, sizeof(buf));
 	char time[256];
 	read(sockfd, time, sizeof(time));
-	printf("Time: %s\n", time);
+	printf("Time: %s", time);
+	int pid;
+	read(sockfd, &pid, sizeof(int));
+	printf("PID of server: %d\n", pid);
 
 	// close the socket
 	close(sockfd);
