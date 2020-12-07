@@ -5,8 +5,9 @@
 #include <string.h>
 #include <sys/socket.h>
 #include <sys/types.h>
+#include <arpa/inet.h>
 #define MAX 80
-#define PORT 8050
+#define PORT 8090
 #define SA struct sockaddr
 
 // Function designed for chat between client and server.
@@ -25,9 +26,7 @@ void servfunc(int sockfd, struct sockaddr_in cli)
 			break;
 		}
 		// print buffer which contains the client contents
-		char* client_ip = inet_ntoa(cli.sin_addr);
-		int client_port = cli.sin_port;
-		printf("Client details: %s:%d\n", client_ip, client_port);
+		printf("Client details: %s:%d\n", (char *)inet_ntoa(cli.sin_addr), cli.sin_port);
 		printf("From client: %s", buff);
 		
 		//bzero(buff, sizeof(buff));
@@ -98,7 +97,7 @@ int main()
 		exit(0);
 	}
 	else
-		printf("Server accept the client...\n");
+		printf("Server accept the client at %s:%d\n\n", (char *)inet_ntoa(cli.sin_addr), cli.sin_port);
 
 	// Function for chatting between client and server
 	servfunc(connfd, cli);
