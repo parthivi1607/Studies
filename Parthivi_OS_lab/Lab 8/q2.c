@@ -3,21 +3,23 @@
 #include <pthread.h>
 #include <string.h>
 
-void *thread_code(void *n)
+void* thread_code(void* n)
 {
 	int sum = 0;
-	for(int i=1;i<= (int)n;i++) sum += i;
-	return (void *)sum;
+	int limit = *((int*)n);
+	for (int i = 1; i <= limit; i++)
+		sum += i;
+	*((int*)n) = sum;
 }
 
-int main()
+void main()
 {
+	int n, num;
+	printf("Enter no. of elements: ");
+	scanf("%d", &n);
+	num = n;
 	pthread_t thread;
-	printf("Enter the number of elements: ");
-	int n,ans;
-	scanf("%d",&n);
-	pthread_create(&thread, 0, &thread_code, (void *)n);
-	printf("Thread created successfully\n");
-	pthread_join(thread,(void **)&ans);
-	printf("Summation of non-negetive integers from 1 to %d = %d\n", n, (int)ans);
+	pthread_create(&thread, 0, &thread_code, (void*)&n);
+	pthread_join(thread, NULL);
+	printf("Sum of all non-negetive numbers from 1 to %d = %d\n", num, n);
 }
