@@ -1,4 +1,4 @@
-#include "l8q1_lex.c"
+#include "lex.c"
 
 void program();
 void declarations();
