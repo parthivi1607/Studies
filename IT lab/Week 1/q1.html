@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 1</title>
+  <script type="text/javascript" src="C:\Users\IT_Lab\Desktop\Parthivi_180905456\IT lab\jquery-3.5.1.js"></script>
+  <script type="text/javascript" lang="javascript">
+    $(document).ready(function(){
+      $('#row-one').css("background-color","purple");
+      $('#row-two').css("background-color","pink");
+      $('#row-three').css("background-color","red");
+      $('div').css("margin-left","1000px");
+      $('button').click(function(){
+        $('div').animate({'margin-left':'10px'});
+      });
+    });
+  </script>
+</head>
+<body>
+  <div>
+    <table style="border: 5px solid;">
+      <tr>
+        <th>Name</th>
+        <th>Semester</th>
+        <th>Roll Number</th>
+      </tr>
+      <tr id="row-one">
+        <td>Parthivi Choubey</td>
+        <td>6</td>
+        <td>60</td>
+      </tr>
+      <tr id="row-two">
+        <td>Aditya Choubey</td>
+        <td>1</td>
+        <td>81</td>
+      </tr>
+      <tr id="row-three">
+        <td>Pratyaksha Pathak</td>
+        <td>3</td>
+        <td>32</td>
+      </tr>
+    </table>
+    <img src="C:\Users\IT_Lab\Desktop\Parthivi_180905456\IT lab\jqueryimg.png" alt="my-img" style="height: 250px; width: 300px;">
+  </div>
+  <button>Click me to animate!</button>
+</body>
+</html>
