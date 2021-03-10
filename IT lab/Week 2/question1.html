@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Student bio-data</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1><b>Student bio data form!</b></h1>
+        <br>
+        <form>
+            <h3>Enter student details:-</h3>
+            <br>
+            <div class="form-group">
+                <label for="usr">Name:</label>
+                <input type="text" class="form-control" id="usr">
+            </div>
+            <br>
+            <p>Select gender:</p>
+            <div class="radio">
+                <label><input type="radio" name="optradio" checked>Prefer not to say</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio">Male</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio">Female</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio">Transgender</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optradio">Others</label>
+            </div>
+            <br>
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>Examination</th>
+                        <th>Year</th>
+                        <th>Marks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">ICSE</th>
+                        <td><input type="text" placeholder="2016"></td>
+                        <td><input type="text" placeholder="100.0%"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ISC</th>
+                        <td><input type="text" placeholder="2018"></td>
+                        <td><input type="text" placeholder="100.0%"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <h5>Select subjects:</h5>
+            <div class="checkbox">
+                <label><input type="checkbox" value="">Maths</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" value="">Biology</label>
+            </div>
+            <div class="checkbox disabled">
+                <label><input type="checkbox" value="" disabled>Physics Chemistry</label>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="comment">Enter comments:</label>
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+        </form>
+        <br>
+        <hr><br>
+        <button type="button" class="btn btn-outline-dark">Submit</button>
+    </div>
+</body>
+
+</html>

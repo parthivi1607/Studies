@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Grid</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body class="container mb-3" style="background-color:pink;">
+    <div class="container-fluid">
+        <h2 class="text-center">Bootstrap Grid</h2>
+        <form>
+            <div class="input-group p-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Name</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Firstname Middlename Lastname">
+            </div>
+            <div class="input-group p-3">
+                <input type="text" class="form-control" placeholder="Your email id">
+                <div class="input-group-append">
+                    <span class="input-group-text">@gmail.com</span>
+                </div>
+            </div>
+        </form>
+        <br>
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="otherRadio" name="gender" class="custom-control-input" checked="">
+                <label class="custom-control-label" for="otherRadio">Prefer not to say</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="maleRadio" name="gender" class="custom-control-input">
+                <label class="custom-control-label" for="maleRadio">Male</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="femaleRadio" name="gender" class="custom-control-input">
+                <label class="custom-control-label" for="femaleRadio">Female</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="otherRadio" name="gender" class="custom-control-input">
+                <label class="custom-control-label" for="otherRadio">Transgender</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="otherRadio" name="gender" class="custom-control-input">
+                <label class="custom-control-label" for="otherRadio">Other</label>
+            </div>
+        </div>
+        <button type="button" class="btn btn-success" onclick="f()">Submit</button>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <form>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input class="form-control" type="text" placeholder="Parthivi Choubey">
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input class="form-control" type="text" placeholder="20">
+                </div>
+                <div class="form-group">
+                    <label>Gender</label>
+                    <input class="form-control" type="text" placeholder="Female">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input class="form-control" type="text" placeholder="1234567890">
+                </div>
+                <button type="button" class="btn btn-dark">Submit</button>
+            </form>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label>Marks Table <span class="badge badge-primary">Enter correct marks</span> </label>
+                <table class="table table-sm">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Examination</th>
+                            <th scope="col">Year</th>
+                            <th scope="col">Marks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">ICSE</th>
+                            <td><input type="text" placeholder="2016"></td>
+                            <td><input type="text" placeholder="Out of 100"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">ISC</th>
+                            <td><input type="text" placeholder="2018"></td>
+                            <td><input type="text" placeholder="Out of 100"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col">
+            <table class="table table-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th></th>
+                        <th>8:00 - 9:30 AM</th>
+                        <th>10:00 - 11:30 AM</th>
+                        <th></th>
+                        <th>2:00 - 3:30 PM</th>
+                        <th>4:00- 5:30 PM</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <th>MON</th>
+                    <td>-----</td>
+                    <td>-----</td>
+                    <td></td>
+                    <td>EEFM</td>
+                    <td>DS</td>
+                </tr>
+                <tr>
+                    <th>TUE</th>
+                    <td>PCAP</td>
+                    <td>PE - I</td>
+                    <td></td>
+                    <td>-----</td>
+                    <td>-----</td>
+                </tr>
+                <tr>
+                    <th>WED</th>
+                    <td>-----</td>
+                    <td>-----</td>
+                    <td></td>
+                    <td>PE - II</td>
+                    <td>OE - III</td>
+                </tr>
+                <tr>
+                    <th>THUR</th>
+                    <td>EEFM</td>
+                    <td>DS</td>
+                    <td></td>
+                    <td>-----</td>
+                    <td>-----</td>
+                </tr>
+                <tr>
+                    <th>FRI</th>
+                    <td>-----</td>
+                    <td>-----</td>
+                    <td></td>
+                    <td>PCAP</td>
+                    <td>PE - I</td>
+                </tr>
+                <tr>
+                    <th>SAT</th>
+                    <td>PE - II</td>
+                    <td>OE - III</td>
+                    <td></td>
+                    <td>-----</td>
+                    <td>-----</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
