@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>School form app</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function myfunc() {
+                var n = document.getElementById("name").value;
+                var dob = document.getElementById("dob").value;
+                var a = document.getElementById("address").value;
+                var c = document.getElementById("contact").value;
+                var e = document.getElementById("email").value;
+                var m_p = document.getElementById("phy").value;
+                var m_c = document.getElementById("chem").value;
+                var m_e = document.getElementById("eng").value;
+                var tot = (parseInt(m_p)+parseInt(m_c)+parseInt(m_e))/3;
+                document.getElementById("textarea").innerHTML = "Name: " + n + "<br>Address: " + a + "<br>Contact number: " + c + "<br>Email ID: " + e + "<br>Date of birth: " + dob + "<br>Total %: " + tot;
+            }
+            </script>
+        <h1>Form to collect student info</h1><hr><br>
+        Enter name: <input type="text" id="name"><br>
+        Enter date of birth: <input type="date" id="dob"><br>
+        Enter email ID: <input type="text" id="email"><br>
+        Enter contact number: <input type="text" id="contact"><br>
+        Enter address: <input type="text" id="address"><br>
+        Enter marks in physics: <input type="text" id="phy"><br>
+        Enter marks in chemistry: <input type="text" id="chem"><br>
+        Enter marks in english: <input type="text" id="eng"><br><br>
+        <button onclick="myfunc()">Submit</button><br><br>
+        <label id="textarea"></label>
+    </body>
+</html>

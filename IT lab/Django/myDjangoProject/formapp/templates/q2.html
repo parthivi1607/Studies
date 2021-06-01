@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Employee form app</title>
+    </head>
+    <body>
+        <h1>Form for employee eligibility</h1><hr><br>
+        <form>
+            <label for="employees">Employee ID</label>
+            <select name="employees" id="employees">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <br>
+            <label for="doj">Date of joining: </label>
+            <input type="date" id="doj"><br>
+            <button id="submit-btn" type="submit">Am I Eligibile for Promotion?</button><br>
+        </form>
+        <label id="textarea"></label>
+
+        <script type="text/javascript">
+            document.getElementById("submit-btn")
+            .addEventListener("click", function (event) {
+                event.preventDefault();
+                results();
+            });
+            function results() {
+                var doj = new Date(document.getElementById("doj").value);
+                let yearsDiff = new Date().getFullYear() - doj.getFullYear();
+                if (yearsDiff >= 5) {
+                    document.getElementById("textarea").innerHTML = "YES";
+                } else {
+                    document.getElementById("textarea").innerHTML = "NO";
+                }
+            }
+        </script>
+    </body>
+</html>

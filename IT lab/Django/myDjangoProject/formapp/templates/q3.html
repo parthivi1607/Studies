@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Question 3 </title>
+  </head>
+  <body>
+    <h1>Calculator App</h1>
+	<div id="container">
+		<form id="student-form">
+			<label for="operation">Operation</label>
+			<select name="operation" id="operation">
+				<option value="add">Add</option>
+				<option value="sub">Subtract</option>
+				<option value="mul">Multiply</option>
+				<option value="div">Divide</option>
+			</select><br><br>
+			<label for="op1">Operand 1</label>
+			<input type="number" id="op1" placeholder="Operand 1"/><br><br>
+			<label for="op2">Operand 2</label>
+			<input type="number" id="op2" placeholder="Operand 2"/><br><br>
+			<button id="submit-btn" type="submit">Calculate</button><br><br>
+		</form>
+		<div id="results"></div>
+    </div>
+    <script>
+      document
+        .getElementById("submit-btn")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          results();
+        });
+      function results() {
+        const resultDiv = document.getElementById("results");
+        while (resultDiv.firstChild) {
+          resultDiv.removeChild(resultDiv.lastChild);
+        }
+
+        let op1 = Number(document.getElementById("op1").value);
+        let op2 = Number(document.getElementById("op2").value);
+
+        let operator = document.getElementById("operation").value;
+        let ans = null;
+        switch (operator) {
+          case "add":
+            ans = document.createElement("h1");
+            ans.innerHTML = `Answer: ${op1 + op2}`;
+            break;
+          case "sub":
+            ans = document.createElement("h1");
+            ans.innerHTML = `Answer: ${op1 - op2}`;
+            break;
+          case "mul":
+            ans = document.createElement("h1");
+            ans.innerHTML = `Answer: ${op1 * op2}`;
+            break;
+          case "div":
+            ans = document.createElement("h1");
+            ans.innerHTML = `Answer: ${op1 / op2}`;
+            break;
+          case "default":
+            break;
+        }
+		document.getElementById("results").appendChild(ans);
+      }
+    </script>
+  </body>
+</html>

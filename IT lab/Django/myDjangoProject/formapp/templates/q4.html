@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>Magazine</title>
+<style>
+.card, .creator {
+    display: inline-block;
+    vertical-align: top;
+    width:40%;
+    height: 80vh;
+    margin:1em;
+    padding:1em;
+}
+.creator{
+background-color: lightyellow;
+border:solid black;
+}
+select{
+margin:1em;
+}
+input{
+margin:1em;
+}
+#greet{
+height:7vh;
+width:20vw;
+}
+.cake{
+width:50%;
+height:300px;
+position: relative;
+top:30vh;
+left:15vh;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$('.cake').hide();
+$('button').click(function(){
+$(".card").css({'background-color':$('#back').find(':selected').text(),'border':$('input[name="border-style"]:checked').val()});
+$('.greet-text').html("<h3>"+$('#greet').val()+"</h3>");
+$('.greet-text').css({'font-family':$('#font').find(':selected').text(),'font-size':parseInt($('#font-size').val())});
+if($("#pic").prop('checked') == true){
+$('.cake').show();
+}
+if(!($("#pic").prop('checked') == true)){
+$('.cake').hide();
+}
+});
+});
+</script>
+</head>
+<body>
+<h1>Magazine Creator</h1>
+<div class="creator">
+<label for="back">Choose Background Color:</label><br/>
+<select id="back" name="background-color">
+<option value="white">white</option>
+<option value="yellow">yellow</option>
+<option value="lightblue">lightblue</option>
+<option value="lightgreen">lightgreen</option>
+</select>
+<br/>
+<label for="font">Choose Font:</label><br/>
+<select id="font" name="font-family">
+<option value="Verdana">Verdana</option>
+<option value="Arial">Arial</option>
+<option value="Georgia">Georgia</option>
+</select>
+<br/>
+<label for="font-size">Specify a numeric font size:</label><br/>
+<input type="text" name="font" id="font-size" value="4"/><br/>
+<label >Choose a border style:</label><br/>
+<input type="radio" name="border-style" value="none"/>None<br/>
+<input type="radio" name="border-style" value="double"/>Double<br/>
+<input type="radio" name="border-style" value="solid"/>Solid<br/>
+<input type="checkbox" id="pic"/>Add the default picture<br/>
+<label for="greet">Add text below for Magazine:</label><br/>
+<input type="text" name="greeting" id="greet"/><br/>
+<button>Update</button>
+</div>
+<div class="card">
+<div class="greet-text">
+</div>
+<img src="{% static 'images/magazine.jpeg' %}" class="cake"/>
+</div>
+</body>

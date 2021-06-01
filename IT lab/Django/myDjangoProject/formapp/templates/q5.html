@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <title>Captcha</title>
+
+    <script type="text/javascript">
+        var count=3;
+   
+    function DrawCaptcha()
+    {
+        var a = Math.floor(Math.random() * 10)+ '';
+        var b = Math.floor(Math.random() * 10)+ '';       
+        var c = Math.floor(Math.random() * 10)+ '';  
+        var d = Math.floor(Math.random() * 10)+ '';   
+        var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d;
+        document.getElementById("txtCaptcha").value = code;
+        document.getElementById('res').innerHTML = "";
+        document.getElementById('input').value = "";
+    }
+
+    function ValidCaptcha()
+    {
+        function removeSpaces(string)
+        {
+            return string.split(' ').join('');
+        }
+
+        var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+        var str2 = removeSpaces(document.getElementById('input').value);
+        if (str1 == str2)
+        {
+            count=3;
+            document.getElementById('res').innerHTML="Correct!";
+            return;
+        }
+        else
+        {
+            if(count==1)
+            {
+                document.getElementById('res').innerHTML="No more tries left.";
+                document.getElementById("input").disabled = true;
+            }  
+            else
+            {
+                count--;
+                document.getElementById('res').innerHTML="Wrong! You have " + count + " tries remaining";
+            }
+        
+        }
+    }    
+    </script>
+</head>
+ <body onload="DrawCaptcha();">
+    <h1>Captcha</h1><hr><br>
+        <input type="text" id="txtCaptcha" />
+        <br><br>
+        <input type="text" id="input" placeholder="Input the Captcha value" /> 
+        <br><br>
+        <input type="button" id="btnrefresh" value="Refresh" onclick="DrawCaptcha();"/>
+        <input type="button" id="btncheck" value="Check" onclick="ValidCaptcha();"/>
+        <h3 id="res"></h3>
+
+    <style>
+        #txtCaptcha {
+            text-decoration: line-through;
+            font-size: 25px;
+        }
+        body {
+            text-align: center;
+            background-color: aliceblue;
+        }
+    </style>
+
+</body>
+</html>

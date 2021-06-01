@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bill</title>
+</head>
+<body>
+    <h2>Your bill!</h2><br>
+    <p>Company: <strong>{{ company }}</strong></p>
+    <p>
+        Mobile: 
+        {% if mobile %}
+        yes
+        {% else %}
+        no
+        {% endif %}
+    </p>
+    <p>
+        Laptop: 
+        {% if laptop %}
+        yes
+        {% else %}
+        no
+        {% endif %}
+    </p>
+    <p>Quantity: {{ quantity }}</p>
+    <br>
+    <p>Total Bill: Rs. {{ total_bill }}</p>
+</body>
+</html>
