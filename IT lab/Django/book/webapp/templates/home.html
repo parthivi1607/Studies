@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8" />  
+        <title>Book</title> 
+    </head> 
+    <body style="background-image: url('https://static1.squarespace.com/static/55db3b44e4b01e5be14cad77/t/578e56a229687f6dcd1765fa/1468946206521/?format=1000w');"> 
+        <nav>
+            <a href="{% url 'publisher' %}">Publisher Info</a>
+            <a href="{% url 'reviews' %}">Reviews</a>
+            <a href="{% url 'metadata' %}">Metadata</a>
+        </nav>
+    </body> 
+    <style>
+    #cover {
+    height: 700px;
+    width: 40%;
+    }
+    body {
+    text-align: center;
+    background-color: lightcoral;
+    padding: 10px;
+    }
+    </style>
+</html>
